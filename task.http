@@ -1,0 +1,60 @@
+
+
+POST http://localhost:3001/register
+Content-Type: application/json
+
+{
+  "username":"user3",
+  "password_hash":"password3"
+
+}
+
+
+###
+
+POST http://localhost:3001/login/ 
+Content-Type:application/json
+
+{
+  "username":"user2",
+  "password_hash":"password2"
+}
+
+###
+GET http://localhost:3001/tasks/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIyIiwiaWF0IjoxNzE0NTMzMjk1fQ.shrf0taQvJqFSUTtnwduYA6W7eqze9OZbPrhMEWB0qc
+
+###
+GET http://localhost:3001/tasks/2/ 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIyIiwiaWF0IjoxNzE0NTMzMjk1fQ.shrf0taQvJqFSUTtnwduYA6W7eqze9OZbPrhMEWB0qc
+
+###
+
+DELETE http://localhost:3001/tasks/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIyIiwiaWF0IjoxNzE0NTMzMjk1fQ.shrf0taQvJqFSUTtnwduYA6W7eqze9OZbPrhMEWB0qc
+
+
+###
+PUT http://localhost:3001/tasks/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIyIiwiaWF0IjoxNzE0NTMzMjk1fQ.shrf0taQvJqFSUTtnwduYA6W7eqze9OZbPrhMEWB0qc
+Content-Type: application/json
+
+{
+  "status":"In Progress"
+}
+
+###
+POST http://localhost:3001/tasks/3/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIyIiwiaWF0IjoxNzE0NTMzMjk1fQ.shrf0taQvJqFSUTtnwduYA6W7eqze9OZbPrhMEWB0qc
+Content-Type: application/json 
+
+{
+   "id":3,
+  "title":"task3",
+  "description":"description for task",
+  "status":"Completed",
+  "assignee_id":"3",
+  "created_at":"20-03-2024",
+  "updated_at":"21-03-2024"
+}
+
